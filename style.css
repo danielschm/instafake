@@ -1,0 +1,188 @@
+* {
+	font-family: Roboto;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid lightgrey;
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.link {
+	color: #1f1f56;
+	text-decoration: none;
+}
+
+/*------------- header toolbar -------*/
+
+#header_toolbar {
+	background-color: #fafafa;
+	width: 100%;
+	
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+#header_toolbar #content_left {
+	float: left;
+	width: 50%;
+	padding: 10px;
+}
+
+#header_toolbar #content_right {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+#header_toolbar #arrow {
+	margin-left: 4px;
+	height: 8px;
+	width: auto;
+}
+
+.header_tool {
+	display: inline-block;
+}
+
+.header_tool:active {
+	background-color: #f0f0f0
+}
+
+.header_tool img{
+	height:23px;
+	margin: 10px;
+	width: auto;
+}
+
+/*------------- header content -------*/
+
+#header_profile {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+#avatar {
+	border-radius: 100%;
+	display: inline-block;
+	background-color: grey;
+	height: 4rem;
+	width: 4rem;
+	flex-shrink: 0;
+}
+
+#stats {
+	display: flex;
+	flex-direction: row;
+}
+
+#stats .item {
+	width: 33%;
+	text-align: center;
+}
+
+#stats .descr {
+	margin-top: 5%;
+	font-size: 8pt;
+	color: #A0A0A0;
+}
+
+#header_profile {
+	flex-grow: 1;
+	padding: 1.5rem;
+}
+
+#profile {
+	padding-left: 1.5rem;
+	width: 100%;
+	position: relative;
+}
+
+#edit_profile {
+	width: 100%;
+	padding: 3px;
+	margin-top: 8px;
+	vertical-align: bottom;
+	font-size: 8pt;
+	text-align: center;
+	border: 1px solid #A5A5A5;
+	border-radius: 3px;
+}
+
+#info_profile {
+	padding-left: 1.5rem;
+	font-size: 10pt;
+	padding-bottom: 0.6rem;
+}
+
+#info_profile div {
+	padding-top: 2px;
+}
+
+#content_toolbar {
+	padding-top:0.5rem;
+	padding-bottom:0.5rem;
+	display: flex;
+}
+
+#content_toolbar div {
+	width: 25%;
+}
+
+.tool img {
+	margin: auto;
+	height: 1.5rem;
+	width: auto;
+	display: none;
+}
+
+.tool:not(:focus) img:first-child {
+	display: block;
+}
+
+.tool:focus img:last-child {
+	display: block;
+}
+
+#navigation_toolbar {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	padding-top:0.5rem;
+	padding-bottom:0.5rem;
+	background-color: #f9f9f9;
+}
+
+#navigation_toolbar div {
+	width: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
