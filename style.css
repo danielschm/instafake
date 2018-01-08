@@ -124,6 +124,10 @@ hr {
 	border-radius: 3px;
 }
 
+#edit_profile:active {
+	border: 1px solid #cfcfcf;
+}
+
 #info_profile {
 	padding-left: 1.5rem;
 	font-size: 10pt;
