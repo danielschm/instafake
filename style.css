@@ -17,13 +17,33 @@ hr {
 	clear: both;
 }
 
-.bold {
+.medium {
 	font-weight: bold;
 }
 
 .link {
 	color: #1f1f56;
 	text-decoration: none;
+}
+
+#_tab1 {
+    display: block;
+}
+
+#_tab2 {
+    display: none;
+}
+
+#_tab3 {
+    display: none;
+}
+
+#_tab4 {
+    display: none
+}
+
+#_tab5 {
+    display: none
 }
 
 /*------------- header toolbar -------*/
@@ -40,7 +60,8 @@ hr {
 #header_toolbar #content_left {
 	float: left;
 	width: 50%;
-	padding: 10px;
+	padding-left: 1.5rem;
+    padding-top: 0.8rem;
 }
 
 #header_toolbar #content_right {
@@ -115,10 +136,10 @@ hr {
 
 #edit_profile {
 	width: 100%;
-	padding: 3px;
+	padding: 4px;
 	margin-top: 8px;
 	vertical-align: bottom;
-	font-size: 8pt;
+	font-size: 10pt;
 	text-align: center;
 	border: 1px solid #A5A5A5;
 	border-radius: 3px;
@@ -156,10 +177,6 @@ hr {
 	margin: auto;
 	height: 1.5rem;
 	width: auto;
-	display: none;
-}
-
-.tool:not(:focus) img:first-child {
 	display: block;
 }
 
