@@ -5,10 +5,14 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta charset="utf-8"> 
 	<link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="manifest.json">
+	<link href="./img/touch/homescreen192.png" sizes="192x192" rel="icon" />
+
+
 	<script src="script.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
 </head>
-<body>
+<body id="body">
 
 	<div id="_tab1">
 
@@ -27,37 +31,39 @@
 	</div>
 
 	<div id="_tab5">
-		<div id="header_toolbar">
-			<div id="content_left" class="medium">
+		<div class="header_toolbar">
+			<div class="content_left" class="bold">
 				daniel_schm
 				<img src="./img/arrow_down.png" id="arrow">
 			</div>
 
-			<div id="content_right">
+			<div class="content_right">
 
 				<div class="header_tool" id="_button01"><img src="./img/reload.png"></div>
 				<div class="header_tool" id="_button02"><img src="./img/add.png" class="header_tool"></div>
-				<div class="header_tool" id="_button03"><img src="./img/settings.png" class="header_tool"></div>
+				<div class="header_tool" id="_button03"><img src="./img/settings_active.png" class="header_tool"></div>
 
 			</div>
 			<div class="clear"></div>
 		</div>
 
 		<div id="header_profile">
-			<div id="avatar"></div>
+			<div>
+				<img id="avatar" src="./img/content/avatar.jpg">
+			</div>
 
 			<div id="profile">
 				<div id="stats">
 					<div class="item">
-						<div class="count medium">99</div>
+						<div class="count bold">9</div>
 						<div class="descr">Beiträge</div>
 					</div>
 					<div class="item">
-						<div class="count medium">363k</div>
+						<div class="count bold">363k</div>
 						<div class="descr">abonnenten</div>
 					</div>
 					<div class="item">
-						<div class="count medium">98</div>
+						<div class="count bold">98</div>
 						<div class="descr">Abonnements</div>
 					</div>
 				</div>
@@ -69,7 +75,7 @@
 		</div>
 
 		<div id="info_profile">
-			<div class="medium">Daniel</div>
+			<div class="bold">Daniel</div>
 			<div>NOVAH '98</div>
 			<div>Producer | Designer | Developer</div>
 			<div><a href="https://www.soundcloud.com/novahofficial/" class="link">soundcloud.com/novahofficial/</a></div>
@@ -96,13 +102,61 @@
 			</div>
 		</div>
 
-
+		<hr>
 
 		<div id="content">
-			<div id="content_tab1">content_tab1</div>
-			<div id="content_tab2">content_tab2</div>
+			<div id="content_tab1">
+				<div class="grid">
+					<div class="overview_item" style="background-image: url('./img/content/1.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/2.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/3.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/10.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/5.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/6.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/7.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/8.jpg')"></div>
+					<div class="overview_item" style="background-image: url('./img/content/9.jpg')"></div>
+				</div>
+			</div>
+			<div id="content_tab2">
+				<div class="list_item"><img class="list_picture" src="./img/content/1.jpg"></div>
+			</div>
 			<div id="content_tab3">content_tab3</div>
 			<div id="content_tab4">content_tab4</div>
+		</div>
+	</div>
+
+	<div id="_photo">
+		<div class="header_toolbar">
+			<div id="nav_back"><img src="./img/nav_back.png"></div>
+			<div id="_text01">Foto</div>
+		</div>
+
+		<div class="sub_header">
+			<div class="content_left">
+				<div id="avatar_small"><img src="./img/content/avatar.jpg"></div>
+				<div id="_text02">daniel_schm</div>
+			</div>
+			<div class="content_right">
+				<div id="photo_settings_wrapper">
+					<img src="./img/settings.png">
+				</div>
+			</div>
+		</div>
+
+		<div id="photo_wrapper"></div>
+
+		<div id="photo_toolbar">
+			<img src="./img/like.png" class="photo_tool">
+			<img src="./img/comment.png" class="photo_tool">
+			<img src="./img/send.png" class="photo_tool">
+			<img src="./img/saved_black.png" class="photo_tool float_right margin_right_small">
+		</div>
+
+		<div id="comment_section">
+			Gefällt <span>benni_klein, xxlittlemissprincessxx</span>
+			und <span><span id="likes">253.645</span> weitere Personen</span>
+			<p>Alle <span id="comments">1.453</span> Kommentare anzeigen</p>
 		</div>
 	</div>
 
@@ -129,6 +183,7 @@
 			<img src="./img/profile_active.png">
 		</div>
 	</div>
+
 
 </body>
 </html>

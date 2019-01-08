@@ -1,10 +1,32 @@
+@font-face {
+	font-family: Roboto; /* regular font */
+	src: url("./font/Roboto-Regular.ttf") format("ttf");
+	font-weight: normal; font-style: normal; }
+
+@font-face {
+	font-family: Roboto; /* bold font */
+	src: url("./font/Roboto-Bold.ttf") format("ttf");
+	font-weight: bold; font-style: normal; }
+
+@font-face {
+	font-family: Roboto; /* light font */
+	src: url("./font/Roboto-Light.ttf") format("ttf");
+	font-weight: 300; font-style: normal; }
+
+@font-face {
+	font-family: Roboto; /* italic font */
+	src: url("./font/Roboto-Italic.ttf") format("ttf");
+	font-weight: normal; font-style: italic; }
+
+
 * {
-	font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
 	box-sizing: border-box;
 }
 
 body {
-	margin: 0
+	margin: 0;
+
 }
 
 hr {
@@ -17,7 +39,7 @@ hr {
 	clear: both;
 }
 
-.medium {
+.bold {
 	font-weight: bold;
 }
 
@@ -43,12 +65,16 @@ hr {
 }
 
 #_tab5 {
-    display: none
+    display: none;
+}
+
+#_photo {
+	display: none;
 }
 
 /*------------- header toolbar -------*/
 
-#header_toolbar {
+.header_toolbar {
 	background-color: #fafafa;
 	width: 100%;
 	
@@ -57,20 +83,22 @@ hr {
 	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 }
 
-#header_toolbar #content_left {
+.header_toolbar .content_left {
 	float: left;
+	font-size: 13pt;
+	font-weight: bold;
 	width: 50%;
-	padding-left: 1.5rem;
+	padding-left: 1rem;
     padding-top: 0.8rem;
 }
 
-#header_toolbar #content_right {
+.header_toolbar .content_right {
 	width: 50%;
 	float: right;
 	text-align: right;
 }
 
-#header_toolbar #arrow {
+.header_toolbar #arrow {
 	margin-left: 4px;
 	height: 8px;
 	width: auto;
@@ -90,6 +118,26 @@ hr {
 	width: auto;
 }
 
+#nav_back {
+	display: block;
+	float: left;
+	padding: 11px;
+}
+
+#nav_back img {
+	height: 20px;
+	width: auto;
+}
+
+#nav_back:active {
+	background-color: #f0f0f0
+}
+
+#_photo .header_toolbar #_text01 {
+	display: inline-block;
+	padding: 14px;
+}
+
 /*------------- header content -------*/
 
 #header_profile {
@@ -102,8 +150,8 @@ hr {
 	border-radius: 100%;
 	display: inline-block;
 	background-color: grey;
-	height: 4rem;
-	width: 4rem;
+	height: 4.8rem;
+	width: 4.8rem;
 	flex-shrink: 0;
 }
 
@@ -119,7 +167,7 @@ hr {
 
 #stats .descr {
 	margin-top: 5%;
-	font-size: 8pt;
+	font-size: 9pt;
 	color: #A0A0A0;
 }
 
@@ -136,10 +184,11 @@ hr {
 
 #edit_profile {
 	width: 100%;
-	padding: 4px;
+	padding: 6px;
 	margin-top: 8px;
 	vertical-align: bottom;
 	font-size: 10pt;
+	font-weight: bold;
 	text-align: center;
 	border: 1px solid #A5A5A5;
 	border-radius: 3px;
@@ -152,7 +201,7 @@ hr {
 #info_profile {
 	padding-left: 1.5rem;
 	font-size: 10pt;
-	padding-bottom: 0.6rem;
+	padding-bottom: 1.2rem;
 }
 
 #info_profile div {
@@ -198,16 +247,114 @@ hr {
 	width: 20%;
 }
 
+#content {
+	padding-bottom: 3.3rem;
+}
 
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 2px;
+}
 
+.overview_item {
+	padding: 50%;
+	background-size: Auto 100%;
+	background-position: center;
+}
 
+.overview_item:active {
+	-webkit-filter: brightness(50%);
+}
 
+#content_tab2 img {
+	width: 100%;
+	height: auto;
+}
 
+/*------------------- photo ------------------*/
 
+#_photo .sub_header {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
 
+#_photo .content_left {
+	width: 50%;
+	font-size: 10pt;
+	font-weight: bold;
+	display: inline-block;
+	padding: 13px 13px 13px 8px;
+}
+#_photo .content_right {
+	width: 50%;
+	float: right;
+	display: inline-block;
+	padding: 13px 13px 13px 8px;
+}
 
+#avatar_small img {
+	border-radius: 100%;
+	background-color: grey;
+	height: 1.7rem;
+	width: 1.7rem;
+}
 
+#avatar_small {
+	display: inline-block;
+	float: left;
+	margin-bottom: -3px;
+}
 
+#_photo #_text02 {
+	float: left;
+	height:1.7rem;
+	line-height: 1.7rem;
+	padding-left: 0.5rem;
+}
 
+#_photo #photo_full {
+	width: 100%;
+	height: auto;
+}
+
+#_photo .content_right div {
+	text-align: right;
+}
+
+#_photo .content_right img {
+	width: 1.5rem;
+	height: auto;
+}
+
+.photo_tool {
+	width: 2.3rem;
+	padding-left: 0.8rem;
+	padding-top: 0.4rem;
+}
+
+.float_right {
+	float: right;
+}
+
+.margin_right_small {
+	margin-right: 0.8rem;
+}
+
+#comment_section {
+	padding: 0.8rem;
+	font-size: 10pt;
+}
+
+#comment_section span {
+	font-weight: bold;
+}
+
+#comment_section p {
+	color: #808080;
+	padding-top: 0.5rem;
+	margin: 0;
+}
 
 

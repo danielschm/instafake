@@ -13,7 +13,11 @@
 
     function switchNavTab(index) {
         if (index !== window.navigation.tabIndex) {
-            document.getElementById("_tab" + window.navigation.tabIndex).style.display = "none";
+            if (window.navigation.tabIndex === 0) {
+                document.getElementById("_photo").style.display = "none";
+            } else {
+                document.getElementById("_tab" + window.navigation.tabIndex).style.display = "none";
+            }
             document.getElementById("_tab" + index).style.display = "block";
             window.navigation.tabIndex = index;
         }
@@ -56,6 +60,18 @@
         }
     }
 
+    function openPreview(id) {
+        let oBody = document.getElementById("body");
+        oBody.style.cssText =
+            "filter: blur(4px) brightness(90%);" +
+            "background-color: #ddd";
+    }
+
+    function closePreview() {
+        let oBody = document.getElementById("body");
+        oBody.style.cssText = "";
+    }
+
     window.navigation = {
         tabIndex: 5
     };
@@ -65,6 +81,29 @@
         }
     };
     window.onload = function () {
+        let oLikes = {
+            1: "256.478",
+            2: "72.812",
+            3: "156.402",
+            4: "170.501",
+            5: "850.236",
+            6: "701.228",
+            7: "146.408",
+            8: "120.514",
+            9: "540.264",
+        }
+
+        let oComments = {
+            1: "6.148",
+            2: "2.852",
+            3: "6.402",
+            4: "12.501",
+            5: "15.236",
+            6: "10.548",
+            7: "146.408",
+            8: "120.514",
+            9: "540.264",
+        }
 
         let btnReload = document.getElementById("_button01");
         let btnAddFriend = document.getElementById("_button02");
@@ -107,6 +146,45 @@
                 switchItem(item, selNavigationToolbar.items);
                 switchNavTab(this.index);
             });
+        });
+
+        let arrOverviewItems = document.getElementsByClassName("overview_item");
+        Array.from(arrOverviewItems).forEach(function(item) {
+            item.addEventListener("touchstart", function() {
+                if (!window.bPhotoPressed) {
+                    window.bPhotoPressed = true;
+                    setTimeout(function() {
+                        if (window.bPhotoPressed === true) {
+                            openPreview();
+                        }
+                    }, 200);
+                }
+
+            });
+            item.addEventListener("touchend", function() {
+                closePreview();
+                window.bPhotoPressed = false;
+            });
+            item.addEventListener("click", function(oEvent) {
+                let oPhotoWrapper = document.getElementById("photo_wrapper");
+                oPhotoWrapper.innerHTML = "<img src='" + oEvent.target.style.backgroundImage.slice(5,-2) + "'" +
+                    "id='photo_full'>";
+                setTimeout(function() {
+                    document.getElementById("_tab" + window.navigation.tabIndex).style.display = "none";
+                    window.navigation.tabIndex = 0;
+                    document.getElementById("_photo").style.display = "block";
+                }, 120);
+            });
+        });
+
+        let itemNavBack = document.getElementById("nav_back");
+
+        itemNavBack.addEventListener("click", function() {
+            setTimeout(function(){
+                document.getElementById("_tab5").style.display = "block";
+                window.navigation.tabIndex = 5;
+                document.getElementById("_photo").style.display = "none";
+            }, 120);
         });
 
         initializeToolbar(selNavigationToolbar, window.navigation.tabIndex);
